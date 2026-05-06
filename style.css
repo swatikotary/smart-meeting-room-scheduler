@@ -1,0 +1,120 @@
+:root {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --primary: #38bdf8;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --text: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container { width: 100%; max-width: 1000px; }
+h1 { color: var(--primary); text-align: center; }
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+}
+
+/* Input */
+.input-group { display: flex; flex-direction: column; gap: 15px; }
+
+#name {
+    padding: 14px;
+    background: #020617;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    color: white;
+}
+
+.time-picker-container { display: flex; gap: 15px; }
+
+.time-box {
+    flex: 1;
+    background: #020617;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #334155;
+}
+
+.time-box label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+}
+
+.select-row { display: flex; gap: 8px; }
+
+select {
+    flex: 1;
+    padding: 10px;
+    background: #1e293b;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Buttons */
+button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-btn { background: var(--primary); color: black; }
+.schedule-btn { background: var(--success); color: white; width: 100%; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px; border-bottom: 1px solid #334155; }
+
+/* Results */
+.result-layout { display: flex; gap: 20px; }
+.res-card { flex: 1; }
+
+/* Timeline */
+.timeline-wrapper {
+    overflow-x: auto;
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.timeline-container {
+    position: relative;
+    height: 120px;
+    min-width: 960px;
+    border-bottom: 1px solid #334155;
+}
+
+.hour-marker {
+    position: absolute;
+    height: 100%;
+    border-left: 1px dashed #1e293b;
+    font-size: 10px;
+}
+
+.gantt-bar {
+    position: absolute;
+    height: 35px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: white;
+}
