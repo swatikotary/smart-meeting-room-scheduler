@@ -2,21 +2,16 @@ let meetings = [];
 const hourWidth = 40;
 
 window.onload = () => {
-    const s = document.getElementById('sH');
-    const e = document.getElementById('eH');
-
     for(let i=1; i<=12; i++) {
-        s.add(new Option(i, i));
-        e.add(new Option(i, i));
+        sH.add(new Option(i, i));
+        eH.add(new Option(i, i));
     }
-
     initTimeline();
 };
 
 function initTimeline() {
     const tl = document.getElementById('timeline');
     tl.innerHTML = "";
-
     for(let i=0; i<=24; i++) {
         let div = document.createElement('div');
         div.className = 'hour-marker';
@@ -63,17 +58,27 @@ function removeMeeting(id) {
 }
 
 function processSchedule() {
+    let steps = [];
+    steps.push("Step 1: Sorting meetings by finish time...");
+
     let sorted = [...meetings].sort((a,b) => a.end - b.end);
+
     let selected = [], rejected = [], lastEnd = -1;
+
+    steps.push("Step 2: Selecting meetings greedily...");
 
     sorted.forEach(m => {
         if(m.start >= lastEnd) {
             selected.push(m);
+            steps.push(`✔ Selected: ${m.name}`);
             lastEnd = m.end;
         } else {
             rejected.push(m);
+            steps.push(`✖ Rejected: ${m.name}`);
         }
     });
+
+    document.getElementById("algoSteps").innerHTML = steps.join("<br>");
 
     selList.innerHTML = selected.map(m => `<li>${m.name}</li>`).join('');
     rejList.innerHTML = rejected.map(m => `<li>${m.name}</li>`).join('');

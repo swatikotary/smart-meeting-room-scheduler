@@ -11,6 +11,7 @@
 <div class="container">
     <h1>📅 Smart Scheduler Pro</h1>
 
+    <!-- Add Meeting -->
     <div class="card">
         <h2>Add Meeting</h2>
         <div class="input-group">
@@ -35,6 +36,7 @@
         </div>
     </div>
 
+    <!-- Table -->
     <div class="card">
         <h2>All Requests</h2>
         <table>
@@ -44,6 +46,15 @@
         <button class="schedule-btn" onclick="processSchedule()">🚀 Optimize & Generate Gantt Chart</button>
     </div>
 
+    <!-- Algorithm Steps -->
+    <div class="card">
+        <h2>🧠 Algorithm Execution</h2>
+        <div id="algoSteps">
+            Click "Schedule" to see step-by-step execution...
+        </div>
+    </div>
+
+    <!-- Results -->
     <div class="result-layout">
         <div class="card res-card" style="border-top: 4px solid var(--success);">
             <h3 style="color: var(--success)">✅ Selected</h3>
@@ -55,12 +66,27 @@
         </div>
     </div>
 
+    <!-- Complexity -->
+    <div class="card">
+        <h2>📊 Complexity Analysis</h2>
+        <p><b>Time Complexity:</b> O(n log n)</p>
+        <p><b>Space Complexity:</b> O(n)</p>
+    </div>
+
+    <!-- Gantt Chart -->
     <div class="card">
         <h2>📊 Gantt Chart Representation</h2>
+
+        <div class="legend">
+            <span style="color:#22c55e">🟢 Selected</span>
+            <span style="color:#ef4444">🔴 Rejected</span>
+        </div>
+
         <div class="timeline-wrapper">
             <div id="timeline" class="timeline-container"></div>
         </div>
     </div>
+
 </div>
 
 <script src="script.js"></script>
